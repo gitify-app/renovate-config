@@ -77,4 +77,5 @@ jobs:
           printf '  %s\n' ${ABS}
           cd "$(mktemp -d)"
           # shellcheck disable=SC2086 -- intentional word-splitting of the file list
-          npx --yes --ignore-scripts --package renovate -- renovate-config-validator --strict ${ABS}
+          # renovate is pinned (and kept current by a regex customManager in renovate.json)
+          npx --yes --ignore-scripts --package renovate@44.154.0 -- renovate-config-validator --strict ${ABS}
