@@ -1,4 +1,18 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["local>gitify-app/renovate-config"]
+  "extends": ["local>gitify-app/renovate-config"],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "description": "Keep the Renovate version pinned in the config validator workflow up to date",
+      "managerFilePatterns": [
+        "/\\.github/workflows/renovate-config-validator\\.yml$/"
+      ],
+      "matchStrings": [
+        "--package renovate@(?<currentValue>\\d+\\.\\d+\\.\\d+)"
+      ],
+      "datasourceTemplate": "npm",
+      "depNameTemplate": "renovate"
+    }
+  ]
 }
