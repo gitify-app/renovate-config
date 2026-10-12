@@ -18,7 +18,7 @@ Inherit the baseline preset from a repository's `renovate.json`:
 ```jsonc
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["github>gitify-app/renovate-config"],
+  "extends": ["local>gitify-app/renovate-config"],
   "packageRules": [
     { "description": "repo-specific rule" }
   ]
@@ -52,7 +52,7 @@ jobs:
 
 | File           | Purpose                                                                     |
 | -------------- | --------------------------------------------------------------------------- |
-| `default.json` | Baseline preset every repository inherits via `github>gitify-app/renovate-config`. |
+| `default.json` | Baseline preset every repository inherits via `local>gitify-app/renovate-config`. |
 
 ## 📄 License
 
