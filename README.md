@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🧩 Gitify Renovate config
+# Gitify Renovate config
 
 **Shared [Renovate][renovate] presets & validation workflow** for the [Gitify organization][gitify-org].
 
