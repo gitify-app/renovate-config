@@ -11,7 +11,7 @@
 > [!NOTE]
 > Public repository. It hosts the organization's shared Renovate preset, which every Gitify repository inherits. Organization [community health files][github-health] live in [`gitify-app/.github`][dot-github].
 
-## 📦 Usage
+## 🔧 Usage
 
 Inherit the baseline preset from a repository's `renovate.json`:
 
@@ -41,14 +41,14 @@ jobs:
     uses: gitify-app/renovate-config/.github/workflows/renovate-config-validator.yml@main
 ```
 
-## 🛠️ Policy
+## ⚖️ Policy
 
 - 🗓️ Weekly updates, with grouped Vite+ and GitHub Actions updates.
 - 🟢 Node runtime tracks LTS only; `@types/node` majors are handled per repository.
 - 🛡️ OSV vulnerability alerts on; no automerge in the baseline.
 - 📌 npm dependency ranges pinned by default, with `engines` left as ranges.
 
-## Presets
+## 🗃️ Presets
 
 | File           | Purpose                                                                     |
 | -------------- | --------------------------------------------------------------------------- |
