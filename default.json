@@ -37,7 +37,8 @@
       "matchManagers": ["github-actions"],
       "matchPackageNames": ["gitify-app/renovate-config"],
       "matchUpdateTypes": ["digest"],
-      "automerge": true
+      "automerge": true,
+      "platformAutomerge": false
     }
   ]
 }
