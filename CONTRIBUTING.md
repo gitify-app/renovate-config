@@ -6,7 +6,7 @@ This repository holds the shared Renovate preset that every Gitify repository
 inherits, plus the reusable validation workflow. See the [README][readme] for how
 consumer repositories extend it.
 
-## Proposing a change
+## ✍️ Proposing a change
 
 1. Clone the repository and create a branch.
 2. Edit [`default.json`][default-preset] (or `renovate.json` for this
@@ -17,7 +17,7 @@ consumer repositories extend it.
 Use [conventional commit][conventional-commits] titles (`chore(deps):`, `feat:`,
 `fix:`) so release and changelog automation keeps working.
 
-## Validating locally
+## ✅ Validating locally
 
 Run the same validator CI uses:
 
@@ -31,13 +31,13 @@ request, so a passing local run should match the `Validate Renovate config`
 status check. CI pins a specific Renovate version; a newer local Renovate can
 report rules the pinned version does not.
 
-## What stays in the README
+## 🔗 What stays in the README
 
 How a repository extends the preset, and how it calls the reusable validation
 workflow, stays in the [README][readme] because it belongs to consumers of this
 repository rather than contributors to it.
 
-## Review and release
+## 👀 Review and release
 
 Changes are reviewed by the [code owners][codeowners] (`@setchy`,
 `@afonsojramos`). There is nothing to publish: merging to `main` updates the
