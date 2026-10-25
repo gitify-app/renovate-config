@@ -77,5 +77,7 @@ jobs:
           printf '  %s\n' ${ABS}
           cd "$(mktemp -d)"
           # shellcheck disable=SC2086 -- intentional word-splitting of the file list
-          # renovate is pinned (and kept current by a regex customManager in renovate.json)
-          npx --yes --ignore-scripts --package renovate@44.167.7 -- renovate-config-validator --strict ${ABS}
+          # renovate is pinned exactly; updates wait for approval on the
+          # Dependency Dashboard (see packageRules in renovate.json) so the
+          # pin does not chase Renovate's several-per-day releases.
+          npx --yes --ignore-scripts --package renovate@44.181.6 -- renovate-config-validator --strict ${ABS}
