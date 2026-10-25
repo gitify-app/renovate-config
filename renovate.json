@@ -1,10 +1,19 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["local>gitify-app/renovate-config"],
+  "packageRules": [
+    {
+      "description": "Renovate ships several releases per day, and every bump moves main (and with it a digest PR in each consumer pinning this workflow). Queue the bump on the Dependency Dashboard, and open its PR as soon as it is approved instead of waiting for the weekly schedule.",
+      "matchDepNames": ["renovate"],
+      "matchDatasources": ["npm"],
+      "dependencyDashboardApproval": true,
+      "schedule": ["at any time"]
+    }
+  ],
   "customManagers": [
     {
       "customType": "regex",
-      "description": "Keep the Renovate version pinned in the config validator workflow up to date",
+      "description": "Track the Renovate version pinned in the config validator workflow and surface updates on the Dependency Dashboard",
       "managerFilePatterns": [
         "/\\.github/workflows/renovate-config-validator\\.yml$/"
       ],
