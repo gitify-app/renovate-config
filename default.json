@@ -35,14 +35,7 @@
     {
       "description": "Group Node.js runtime updates across Docker images, nvm, nodenv, asdf, mise, engines, and devEngines",
       "matchDatasources": ["docker", "node-version"],
-      "matchPackageNames": [
-        "/(?:^|/)node$/",
-        "!calico/node",
-        "!docker.io/calico/node",
-        "!ghcr.io/devcontainers/features/node",
-        "!kindest/node",
-        "!docker.io/kindest/node"
-      ],
+      "matchPackageNames": ["/(?:^|/)node$/"],
       "groupName": "node",
       "commitMessageTopic": "Node.js"
     },
