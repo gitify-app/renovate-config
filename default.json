@@ -33,6 +33,20 @@
       "commitMessageTopic": "{{depName}}"
     },
     {
+      "description": "Group Node.js runtime updates across Docker images, nvm, nodenv, asdf, mise, engines, and devEngines",
+      "matchDatasources": ["docker", "node-version"],
+      "matchPackageNames": ["/(?:^|/)node$/"],
+      "groupName": "node",
+      "commitMessageTopic": "Node.js"
+    },
+    {
+      "description": "Group @types/node updates with the Node.js runtime",
+      "matchDatasources": ["npm"],
+      "matchPackageNames": ["@types/node"],
+      "groupName": "node",
+      "commitMessageTopic": "Node.js"
+    },
+    {
       "description": "Auto-merge digest updates for gitify-app/renovate-config workflows",
       "matchManagers": ["github-actions"],
       "matchPackageNames": ["gitify-app/renovate-config"],

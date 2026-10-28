@@ -43,8 +43,8 @@ jobs:
 
 ## ⚖️ Policy
 
-- 🗓️ Weekly updates, with grouped Vite+ and GitHub Actions updates.
-- 🟢 Node runtime tracks LTS only; `@types/node` majors are handled per repository.
+- 🗓️ Weekly updates, with grouped Vite+, GitHub Actions, Node.js runtime, and `@types/node` updates.
+- 🟢 Node.js runtime (`engines`, `devEngines`, `.nvmrc`, `.node-version`, Docker images) and `@types/node` updates are grouped into one PR; Node runtime tracks LTS only.
 - 🛡️ OSV vulnerability alerts on; no automerge in the baseline.
 - 📌 npm dependency ranges pinned by default, with `engines` left as ranges.
 
