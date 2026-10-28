@@ -28,6 +28,12 @@
       "rangeStrategy": "auto"
     },
     {
+      "description": "Group Node.js runtime updates across .nvmrc and package.json",
+      "matchManagers": ["npm", "nvm"],
+      "matchPackageNames": ["node"],
+      "groupName": "node"
+    },
+    {
       "description": "Use the dependency name in npm commit messages and PR titles",
       "matchDatasources": ["npm"],
       "commitMessageTopic": "{{depName}}"
