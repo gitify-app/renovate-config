@@ -28,15 +28,30 @@
       "rangeStrategy": "auto"
     },
     {
-      "description": "Group Node.js runtime updates across .nvmrc and package.json",
-      "matchManagers": ["npm", "nvm"],
-      "matchPackageNames": ["node"],
-      "groupName": "node"
-    },
-    {
       "description": "Use the dependency name in npm commit messages and PR titles",
       "matchDatasources": ["npm"],
       "commitMessageTopic": "{{depName}}"
+    },
+    {
+      "description": "Group Node.js runtime updates across Docker images, nvm, nodenv, asdf, mise, engines, and devEngines",
+      "matchDatasources": ["docker", "node-version"],
+      "matchPackageNames": [
+        "/(?:^|/)node$/",
+        "!calico/node",
+        "!docker.io/calico/node",
+        "!ghcr.io/devcontainers/features/node",
+        "!kindest/node",
+        "!docker.io/kindest/node"
+      ],
+      "groupName": "node",
+      "commitMessageTopic": "Node.js"
+    },
+    {
+      "description": "Group @types/node updates with the Node.js runtime",
+      "matchDatasources": ["npm"],
+      "matchPackageNames": ["@types/node"],
+      "groupName": "node",
+      "commitMessageTopic": "Node.js"
     },
     {
       "description": "Auto-merge digest updates for gitify-app/renovate-config workflows",
