@@ -45,9 +45,21 @@ This trusted internal validator intentionally tracks `main`, so fixes reach
 consumers without a digest-update PR. Consumers currently using a commit SHA must
 replace that reference with `main`; the preset's `pinDigests: false` rule prevents
 Renovate from pinning it again but does not rewrite existing SHA references.
-Repositories running zizmor must also configure an explicit `ref-pinned` exception
-for `gitify-app/renovate-config/.github/workflows/renovate-config-validator.yml`.
-Keep that exception limited to this workflow, not an organization-wide pattern.
+Repositories running zizmor must also configure an explicit `ref-pin` policy
+in `zizmor.yml`, preserving their other policies:
+
+```yaml
+rules:
+  unpinned-uses:
+    config:
+      policies:
+        "*": hash-pin
+        "gitify-app/renovate-config/.github/workflows/renovate-config-validator.yml": ref-pin
+```
+
+The exception key must include the complete reusable workflow path; a bare
+repository key does not match it. Keep this exception limited to this workflow,
+not a repository-wide or organization-wide pattern.
 
 Tracking a branch trusts future changes merged into this repository rather than
 an immutable reviewed commit. This exception is only for the internal validator:
