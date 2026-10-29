@@ -41,9 +41,11 @@ jobs:
     uses: gitify-app/renovate-config/.github/workflows/renovate-config-validator.yml@main
 ```
 
-Use `@main` for this trusted internal workflow. Change existing SHA references;
-the preset prevents Renovate from pinning it again. Other actions remain
-digest-pinned. For zizmor, allow this exact workflow path:
+This trusted validator tracks `@main`, trusting changes merged to this
+repository. Change existing SHA references to `@main`; the preset prevents
+Renovate from pinning them again. Other actions remain SHA-pinned.
+
+For zizmor, add this exact-path exception to `.github/zizmor.yml`:
 
 ```yaml
 rules:
@@ -60,7 +62,6 @@ rules:
 - 🟢 Node.js runtime (`engines`, `devEngines`, `.nvmrc`, `.node-version`, Docker images) and `@types/node` updates are grouped into one PR; Node runtime tracks LTS only.
 - 🛡️ OSV vulnerability alerts on; no automerge in the baseline.
 - 📌 npm dependency ranges pinned by default, with `engines` left as ranges.
-- 📌 GitHub Actions stay digest-pinned except for the trusted validator above, which tracks `main`.
 
 ## 🗃️ Presets
 
