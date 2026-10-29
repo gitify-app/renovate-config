@@ -41,12 +41,9 @@ jobs:
     uses: gitify-app/renovate-config/.github/workflows/renovate-config-validator.yml@main
 ```
 
-This trusted internal validator intentionally tracks `main`, so fixes reach
-consumers without a digest-update PR. Consumers currently using a commit SHA must
-replace that reference with `main`; the preset's `pinDigests: false` rule prevents
-Renovate from pinning it again but does not rewrite existing SHA references.
-Repositories running zizmor must also configure an explicit `ref-pin` policy
-in `zizmor.yml`, preserving their other policies:
+Use `@main` for this trusted internal workflow. Change existing SHA references;
+the preset prevents Renovate from pinning it again. Other actions remain
+digest-pinned. For zizmor, allow this exact workflow path:
 
 ```yaml
 rules:
@@ -57,24 +54,13 @@ rules:
         "gitify-app/renovate-config/.github/workflows/renovate-config-validator.yml": ref-pin
 ```
 
-The exception key must include the complete reusable workflow path; a bare
-repository key does not match it. Keep this exception limited to this workflow,
-not a repository-wide or organization-wide pattern.
-
-Tracking a branch trusts future changes merged into this repository rather than
-an immutable reviewed commit. This exception is only for the internal validator:
-all third-party actions and workflows remain subject to the baseline's digest
-pinning. Renovate matches reusable workflows by repository, so the exact
-`gitify-app/renovate-config` package rule also applies to any future workflows in
-this repository; do not broaden it to `gitify-app/**` or `setchy/**`.
-
 ## ⚖️ Policy
 
 - 🗓️ Weekly updates, with grouped Vite+, GitHub Actions, Node.js runtime, and `@types/node` updates.
 - 🟢 Node.js runtime (`engines`, `devEngines`, `.nvmrc`, `.node-version`, Docker images) and `@types/node` updates are grouped into one PR; Node runtime tracks LTS only.
 - 🛡️ OSV vulnerability alerts on; no automerge in the baseline.
 - 📌 npm dependency ranges pinned by default, with `engines` left as ranges.
-- 📌 GitHub Actions digest pinning stays enabled except for the trusted internal Renovate validator described above.
+- 📌 GitHub Actions stay digest-pinned except for the trusted validator above, which tracks `main`.
 
 ## 🗃️ Presets
 
