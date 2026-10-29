@@ -3,6 +3,7 @@
   "description": "Default preset for use with gitify's repos",
   "extends": [
     "config:best-practices",
+    ":disableRateLimiting",
     ":enableVulnerabilityAlerts",
     ":semanticCommitTypeAll(chore)",
     ":semanticCommitScope(deps)",
