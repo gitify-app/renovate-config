@@ -33,10 +33,12 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v7.1.0
+      - name: Setup pnpm and Node.js
+        uses: pnpm/setup@v3.1.2
         with:
+          version: 12
           node-version-file: .nvmrc
+          install: false
 
       - name: Validate Renovate config
         run: |
@@ -51,4 +53,7 @@ jobs:
           # renovate is pinned exactly; updates wait for approval on the
           # Dependency Dashboard (see packageRules in renovate.json) so the
           # pin does not chase Renovate's several-per-day releases.
-          npx --yes --ignore-scripts --package renovate@44.182.2 -- renovate-config-validator --strict --no-global "$@"
+          # Run through pnpm, not npx: consumer package.json files declare a
+          # pnpm devEngines.packageManager, and npm refuses to exec anything
+          # inside such a project (EBADDEVENGINES).
+          pnpm --package=renovate@44.182.2 dlx renovate-config-validator --strict --no-global "$@"
