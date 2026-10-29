@@ -41,6 +41,21 @@ jobs:
     uses: gitify-app/renovate-config/.github/workflows/renovate-config-validator.yml@main
 ```
 
+This trusted validator tracks `@main`, trusting changes merged to this
+repository. Change existing SHA references to `@main`; the preset prevents
+Renovate from pinning them again. Other actions remain SHA-pinned.
+
+For zizmor, add this exact-path exception to `.github/zizmor.yml`:
+
+```yaml
+rules:
+  unpinned-uses:
+    config:
+      policies:
+        "*": hash-pin
+        "gitify-app/renovate-config/.github/workflows/renovate-config-validator.yml": ref-pin
+```
+
 ## ⚖️ Policy
 
 - 🗓️ Weekly updates, with grouped Vite+, GitHub Actions, Node.js runtime, and `@types/node` updates.

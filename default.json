@@ -48,12 +48,10 @@
       "commitMessageTopic": "Node.js"
     },
     {
-      "description": "Auto-merge digest updates for gitify-app/renovate-config workflows",
+      "description": "Allow the trusted internal Renovate validator workflow to track main",
       "matchManagers": ["github-actions"],
       "matchPackageNames": ["gitify-app/renovate-config"],
-      "matchUpdateTypes": ["digest"],
-      "automerge": true,
-      "platformAutomerge": false
+      "pinDigests": false
     }
   ]
 }
