@@ -51,4 +51,4 @@ jobs:
           # renovate is pinned exactly; updates wait for approval on the
           # Dependency Dashboard (see packageRules in renovate.json) so the
           # pin does not chase Renovate's several-per-day releases.
-          npx --yes --ignore-scripts --package renovate@44.181.6 -- renovate-config-validator --strict --no-global "$@"
+          npx --yes --ignore-scripts --package renovate@44.182.2 -- renovate-config-validator --strict --no-global "$@"
