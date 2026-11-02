@@ -11,6 +11,7 @@
     ":rebaseStalePrs",
     "schedule:weekly",
     "group:vitePlus",
+    "group:nodeJsWithTypes",
     "group:githubArtifactActions",
     "customManagers:biomeVersions",
     "helpers:pinGitHubActionDigestsToSemver"
@@ -32,20 +33,6 @@
       "description": "Use the dependency name in npm commit messages and PR titles",
       "matchDatasources": ["npm"],
       "commitMessageTopic": "{{depName}}"
-    },
-    {
-      "description": "Group Node.js runtime updates across Docker images, nvm, nodenv, asdf, mise, engines, and devEngines",
-      "matchDatasources": ["docker", "node-version"],
-      "matchPackageNames": ["/(?:^|/)node$/"],
-      "groupName": "node",
-      "commitMessageTopic": "Node.js"
-    },
-    {
-      "description": "Group @types/node updates with the Node.js runtime",
-      "matchDatasources": ["npm"],
-      "matchPackageNames": ["@types/node"],
-      "groupName": "node",
-      "commitMessageTopic": "Node.js"
     },
     {
       "description": "Allow the trusted internal Renovate validator workflow to track main",

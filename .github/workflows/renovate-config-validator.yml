@@ -56,4 +56,4 @@ jobs:
           # Run through pnpm, not npx: consumer package.json files declare a
           # pnpm devEngines.packageManager, and npm refuses to exec anything
           # inside such a project (EBADDEVENGINES).
-          pnpm --package=renovate@44.182.2 dlx renovate-config-validator --strict --no-global "$@"
+          pnpm --package=renovate@44.202.1 dlx renovate-config-validator --strict --no-global "$@"
