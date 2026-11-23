@@ -8,7 +8,6 @@
     ":semanticCommitTypeAll(chore)",
     ":semanticCommitScope(deps)",
     ":separateMultipleMajorReleases",
-    ":rebaseStalePrs",
     "schedule:weekly",
     "group:vitePlus",
     "group:nodeJsWithTypes",
@@ -16,6 +15,7 @@
     "customManagers:biomeVersions",
     "helpers:pinGitHubActionDigestsToSemver"
   ],
+  "rebaseWhen": "conflicted",
   "osvVulnerabilityAlerts": true,
   "labels": ["dependency"],
   "packageRules": [

@@ -59,6 +59,7 @@ rules:
 ## ⚖️ Policy
 
 - 🗓️ Weekly updates, with grouped Vite+, GitHub Actions, Node.js runtime, and `@types/node` updates.
+- 🔀 Open update PRs are rebased only when they conflict, not on every base-branch change.
 - 🟢 Node.js runtime (`engines`, `devEngines`, `.nvmrc`, `.node-version`, Docker images) and `@types/node` updates are grouped into one PR; Node runtime tracks LTS only.
 - 🛡️ OSV vulnerability alerts on; no automerge in the baseline.
 - 📌 npm dependency ranges pinned by default, with `engines` left as ranges.
