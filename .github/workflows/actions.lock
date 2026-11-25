@@ -6,6 +6,8 @@ workflows:
     '.github/workflows/renovate-config-validator.yml':
         - 'actions/checkout@v7.0.1'
         - 'pnpm/setup@v3.2.0'
+    '.github/workflows/verify-actions-lock.yml':
+        - 'actions/checkout@v7.0.1'
 dependencies:
     'actions/checkout@v7.0.1':
         ref: 'v7.0.1'
