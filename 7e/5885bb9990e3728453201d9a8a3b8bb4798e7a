@@ -1,0 +1,16 @@
+.github/workflows/actions.lock
+  h_ac004aadb63da9 6-7
+.github/workflows/lint.yml
+  h_ac004aadb63da9 1,12-13,25-27
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "7e5885bb9990e3728453201d9a8a3b8bb4798e7a",
+  "prompts": {},
+  "humans": {
+    "h_ac004aadb63da9": {
+      "author": "Adam Setch <adam.setch@outlook.com>"
+    }
+  }
+}
