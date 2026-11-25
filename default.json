@@ -13,6 +13,7 @@
     "group:nodeJsWithTypes",
     "group:githubArtifactActions",
     "customManagers:biomeVersions",
+    "customManagers:githubActionsVersions",
     "helpers:pinGitHubActionDigestsToSemver"
   ],
   "rebaseWhen": "conflicted",
